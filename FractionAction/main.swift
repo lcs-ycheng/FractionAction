@@ -70,7 +70,13 @@ if reminder == 0 {
 else if denomnator % reminder == 0 {
     let reducedNumerator = 1
     let reduceDomnator =  denomnator / reminder
+    //if the quotient is 0, don't print
+    if quotient == 0 {
+    print("\(reducedNumerator)/\(reduceDomnator)")
+        //if the quotient is bigger than 0, print it. 
+    } else {
     print("\(quotient) \(reducedNumerator)/\(reduceDomnator)")
+    }
     // the reminder is not the factor of the denomnator
 } else  {
     // we must reduce.
@@ -90,8 +96,15 @@ else if denomnator % reminder == 0 {
     //Get the finial fraction
     let finialReminder = reminder / GCF
     let finialDenomnator = denomnator / GCF
-    print("\(quotient) \(finialReminder) /\(finialDenomnator)")
     
+    //if the quotient equals to 0, don't print
+    if quotient == 0 {
+    print("\(finialReminder) /\(finialDenomnator)")
+        //if the quotient is not, print it
+    } else {
+    print("\(quotient) \(finialReminder)/\(finialDenomnator)")
+
+    }
 }
 // Report results to the user here
 
