@@ -16,11 +16,8 @@ var denomnator = 0
 while 1 == 1 {
     print("numerator")
     
-    //test 1:
-    let givenNumerator = readLine()
     // Waiting for input
-    
-    guard let integerNumerator = givenNumerator else {
+    guard let integerNumerator = readLine() else {
         continue
         // Check for nil
     }
@@ -40,16 +37,14 @@ print(numerator)
 
 while 1 == 1 {
     print("denomator")
-    //test 1:
-    let givenDenomator = readLine()
-//wait for the input
     
-    guard let givenInteger = givenDenomator else{
-       //check for nil
+    //wait for the input
+    guard let givenInteger = readLine() else{
+        //check for nil
         continue
     }
     //test 2:
-    guard let integerDenomator = Int(givenDenomator!) else{
+    guard let integerDenomator = Int(givenInteger) else{
         //check for integer
         continue
     }
@@ -67,33 +62,36 @@ print(denomnator)
 var quotient = numerator / denomnator
 var reminder = numerator % denomnator
 
-//if the result is in whole number
+    //if the result is in whole number
 if reminder == 0 {
-    print("Result is:")
-    print(quotient)
+    print("Result is:", quotient)
 }
-    //if the numerator is 0
-else if numerator == 0 {
-    print("result is \(0)")
-} else {
+    //if the reminder is the factor of the denomnator
+else if denomnator % reminder == 0 {
+    let reducedNumerator = 1
+    let reduceDomnator =  denomnator / reminder
+    print("\(quotient) \(reducedNumerator)/\(reduceDomnator)")
+    // the reminder is not the factor of the denomnator
+} else  {
     // we must reduce.
     //loop backwards from the halfway point of the numerator
     var GCF = 1 //not the real GCF
-for i in stride(from: reminder / 2, through: 2, by: -1){
-    print(i)
-    //when the vounter varibale "i" evenly divides into both
-    //th reminder and the original denominator...we have the GCF
-    
-if reminder % i == 0 && denomnator % i == 0 {
-   
-    //Now we know that "i" is the greatest common factor (GCF)
-    GCF = i
-    break //stop the loop
+    for i in stride(from: reminder / 2, through: 2, by: -1){
+        print(i)
+        //when the vounter varibale "i" evenly divides into both
+        //th reminder and the original denominator...we have the GCF
+        
+        if reminder % i == 0 && denomnator % i == 0 {
+            //Now we know that "i" is the greatest common factor (GCF)
+            GCF = i
+            break
         }
-}
-    print(GCF)
-    print("\(quotient) \(reminder / GCF) /\(denomnator / GCF)")
+    }
+            //Get the finial fraction
+            let finialReminder = reminder / GCF
+            let finialDenomnator = denomnator / GCF
+        print("\(quotient) \(finialReminder) /\(finialDenomnator)")
 
-}
+    }
 // Report results to the user here
 
