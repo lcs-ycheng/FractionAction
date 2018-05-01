@@ -49,7 +49,7 @@ while 1 == 1 {
         continue
     }
     //test 3:
-    if integerDenomator < 0 {
+    if integerDenomator < 1 {
         continue
     }
     denomnator = integerDenomator
@@ -62,7 +62,7 @@ print(denomnator)
 var quotient = numerator / denomnator
 var reminder = numerator % denomnator
 
-    //if the result is in whole number
+//if the result is in whole number
 if reminder == 0 {
     print("Result is:", quotient)
 }
@@ -87,11 +87,11 @@ else if denomnator % reminder == 0 {
             break
         }
     }
-            //Get the finial fraction
-            let finialReminder = reminder / GCF
-            let finialDenomnator = denomnator / GCF
-        print("\(quotient) \(finialReminder) /\(finialDenomnator)")
-
-    }
+    //Get the finial fraction
+    let finialReminder = reminder / GCF
+    let finialDenomnator = denomnator / GCF
+    print("\(quotient) \(finialReminder) /\(finialDenomnator)")
+    
+}
 // Report results to the user here
 
